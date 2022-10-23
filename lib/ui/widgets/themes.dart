@@ -27,7 +27,7 @@ class Themes {
 TextStyle get subHeadingStyle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: FontWeight.bold,
       color: Get.isDarkMode ? Colors.grey[400] : Colors.grey,
     ),

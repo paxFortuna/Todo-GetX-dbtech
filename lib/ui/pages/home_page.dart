@@ -93,6 +93,7 @@ class _HomePageState extends State<HomePage> {
                 DateFormat.yMMMMd().format(DateTime.now()),
                 style: subHeadingStyle,
               ),
+              const SizedBox(height: 6),
               Text(
                 'Today',
                 style: headingStyle,
