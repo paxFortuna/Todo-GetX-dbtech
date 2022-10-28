@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (_, index) {
               Task task = _taskController.taskList[index];
 
-              if (task.repeat == 'Daily') {
+              if (task.repeated == 'Daily') {
                 return AnimationConfiguration.staggeredList(
                   position: index,
                   child: SlideAnimation(

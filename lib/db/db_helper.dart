@@ -22,15 +22,15 @@ class DBHelper {
         version: _version,
         onCreate: (db, version) {
           return db.execute('''
-CREATE TABLE [if not exist] $_tableName(
+CREATE TABLE $_tableName(
 id INTEGER PRIMARY KEY AUTOINCREMENT, 
-title String, 
+title TEXT, 
 note TEXT, 
-date String,
-startTime String, 
-endTime String, 
+date TEXT,
+startTime TEXT, 
+endTime TEXT, 
 remind integer, 
-repeat String, 
+repeated TEXT, 
 color INTEGER,
 isCompleted INTEGER)
           ''');
@@ -43,8 +43,9 @@ isCompleted INTEGER)
 
   static Future<int> insert(Task? task) async {
     log("insert function called");
-    return await _db?.insert(_tableName, task!.toJson()) ?? 1;
+    return await _db!.insert(_tableName, task!.toJson());
   }
+
   // null exception 있음
   static Future<List<Map<String, dynamic>>> query() async {
     print("query function called");

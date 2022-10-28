@@ -337,7 +337,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   // addTaskToDb
   _addTaskToDb() async {
-    await _taskController.addTask(
+    int value = await _taskController.addTask(
       task: Task(
           note: _noteController.text,
           title: _titleController.text,
@@ -345,11 +345,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
           startTime: _startTime,
           endTime: _endTime,
           remind: _selectedRemind,
-          repeat: _selectedRepeat,
+          repeated: _selectedRepeat,
           color: _selectedColor,
           isCompleted: 0
       ),
     );
-    // log("My id is  '+' $value");
+    log("My id is  '+' $value");
   }
 }
